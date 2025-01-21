@@ -1,0 +1,3 @@
+[submodule "Week03"]
+	path = Week03
+	url = git@github.com:gbc-ekos/comp2152_week03.git
