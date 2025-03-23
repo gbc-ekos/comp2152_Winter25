@@ -1,4 +1,6 @@
 # Import the random library to use for the dice later
+import os
+import platform
 import random
 
 # Put all the functions into another file and import them
@@ -7,6 +9,11 @@ from Assignments.Assignment2.dice import small_roll
 
 from Assignments.Assignment2.hero import Hero
 from Assignments.Assignment2.monster import Monster
+
+os_name = os.name
+print(f"Running on OS: {os_name}")
+
+print("Python version:", platform.python_version())
 
 # Define the Loot
 loot_options = ["Health Potion", "Poison Potion", "Secret Note", "Leather Boots", "Flimsy Gloves"]
@@ -28,9 +35,10 @@ hero = Hero()
 monster = Monster()
 
 # Loop to get valid input for Hero and Monster's Combat Strength
+last_game, kill_count = functions.load_game()
 
 # Lab 06 - Question 5b
-functions.adjust_combat_strength(hero.combat_strength, monster.combat_strength)
+functions.adjust_combat_strength(last_game, hero.combat_strength, monster.combat_strength)
 
 # Collect Loot
 print("    ------------------------------------------------------------------")
@@ -157,6 +165,7 @@ while monster.health_points > 0 and hero.health_points > 0:
                 num_stars = 2
 
 if monster.health_points <= 0:
+    kill_count += 1
     winner = "Hero"
 else:
     winner = "Monster"
@@ -185,4 +194,4 @@ if not input_invalid:
     stars_display = "*" * num_stars
     print("    |    Hero " + short_name + " gets <" + stars_display + "> stars")
 
-    functions.save_game(winner, hero_name=short_name, num_stars=num_stars)
+    functions.save_game(winner, hero_name=short_name, num_stars=num_stars, kill_count=kill_count)
