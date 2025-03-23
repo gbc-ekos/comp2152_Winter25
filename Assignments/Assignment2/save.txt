@@ -1,0 +1,4 @@
+Monster has killed the hero previously
+Total monsters defeated 0
+Monster has killed the hero previously
+Total monsters defeated 0
