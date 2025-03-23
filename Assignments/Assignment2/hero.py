@@ -6,8 +6,8 @@ class Hero(Character):
 
     def __init__(self):
         Character.__init__(self)
-        self.__roll_hp()
         self.__roll_cs()
+        self.__roll_hp()
 
     def __roll_cs(self):
         # Initializing hero combat strength

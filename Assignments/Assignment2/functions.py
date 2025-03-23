@@ -92,7 +92,7 @@ def load_game():
                 return last_line, kill_count
     except FileNotFoundError:
         print("No previous game found. Starting fresh.")
-        return None
+        return None, 0
 
 # Lab 06 - Question 5b
 def adjust_combat_strength(last_game, combat_strength, m_combat_strength):

@@ -14,7 +14,7 @@ class Character:
 
     @property
     def health_points(self):
-        return self.health_points
+        return self.__health_points
 
     @health_points.setter
     def health_points(self, value):
