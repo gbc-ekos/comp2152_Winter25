@@ -4,3 +4,6 @@
 [submodule "comp2152_labs"]
 	path = comp2152_labs
 	url = git@github.com:gbc-ekos/comp2152_labs.git
+[submodule "Project"]
+	path = Project
+	url = git@github.com:SnikeZ/COMP2152_GroupProject.git
